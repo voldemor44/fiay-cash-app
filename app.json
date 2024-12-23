@@ -2,6 +2,7 @@
   "expo": {
     "name": "fiay-cash-app",
     "slug": "fiay-cash-app",
+    "scheme": "fiay-cash",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
