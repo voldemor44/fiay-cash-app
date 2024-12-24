@@ -7,8 +7,16 @@ const rowStyle = {
   alignItems: "center",
 };
 
-export default function Row({ style, gap, ...rest }) {
+export default function Row({ style, gap, bgcolor, ...rest }) {
   return (
-    <View style={[rowStyle, style, gap ? { gap: gap } : undefined]} {...rest} />
+    <View
+      style={[
+        rowStyle,
+        style,
+        gap ? { gap: gap } : undefined,
+        { backgroundColor: bgcolor },
+      ]}
+      {...rest}
+    />
   );
 }
