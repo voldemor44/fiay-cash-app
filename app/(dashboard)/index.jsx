@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Row } from "../../components";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Dashboard = () => {
   return (
