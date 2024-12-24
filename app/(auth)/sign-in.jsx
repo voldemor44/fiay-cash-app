@@ -14,7 +14,7 @@ const SignIn = () => {
   });
   const [isSubmitting, setSubmitting] = useState(false);
 
-  const submit = async () => {};
+  const submit = async () => { router.push('(dashboard)')};
 
   return (
     <SafeAreaView className="bg-primary h-full">
