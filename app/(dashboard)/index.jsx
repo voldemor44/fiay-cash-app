@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Row } from "../../components";
+import { Row, Card } from "../../components";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "../../components/ThemedText";
 import { useNavigation } from "expo-router";
@@ -19,8 +19,20 @@ const Dashboard = () => {
         <Ionicons name="menu" size={32} color="green" onPress={openDrawer} />
         <ThemedText variant={"headline"}>Dashboard</ThemedText>
       </Row>
-      <Row style={styles.header} gap={16} >
-     
+
+      <View className="ml-5">
+        <ThemedText variant={"headline"}>Welcome Back !</ThemedText>
+        <ThemedText variant={"subtitle1"} cls="mt-2">
+          Hi, AYILO Amen
+        </ThemedText>
+      </View>
+      <Row>
+        <Card text="Parrainage" icon="users" value="20" />
+        <Card text="Niveau" icon="star" value="3" />
+      </Row>
+      <Row>
+        <Card text="Gains" icon="money" value="10000" />
+        <Card text="Solde" icon="dollar" value="3000" />
       </Row>
     </SafeAreaView>
   );
