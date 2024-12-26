@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Row, Card } from "../../components";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ThemedText } from "../../components/ThemedText";
 import { useNavigation } from "expo-router";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Dashboard = () => {
   const navigation = useNavigation();
@@ -26,14 +27,48 @@ const Dashboard = () => {
           Hi, AYILO Amen
         </ThemedText>
       </View>
-      <Row>
-        <Card text="Parrainage" icon="users" value="20" />
-        <Card text="Niveau" icon="star" value="3" />
-      </Row>
-      <Row>
-        <Card text="Gains" icon="money" value="10000" />
-        <Card text="Solde" icon="dollar" value="3000" />
-      </Row>
+
+      <View className="justify-center mt-10">
+        <Row className="justify-center">
+          <Card text="Parrainage" icon="users" value="20" />
+          <Card text="Niveau" icon="star" value="3" />
+        </Row>
+        <Row className="justify-center">
+          <Card text="Gains" icon="money" value="10000" />
+          <Card text="Solde" icon="dollar" value="3000" />
+        </Row>
+        <Row gap={12} className="justify-center">
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: "gray" }]}
+            className="justify-center text-gray-500 ml-4"
+          >
+            <FontAwesome
+              name="copy"
+              size={16}
+              color="#fff"
+              style={styles.icon}
+            />
+            <Text style={styles.buttonText}>VISE25</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.button,
+              styles.retraitButton,
+              { backgroundColor: "green" },
+            ]}
+            className="justify-center mr-4"
+          >
+            <FontAwesome
+              name="copy"
+              size={16}
+              color="#fff"
+              style={styles.icon}
+            />
+            <Text style={styles.buttonText}>Retrait</Text>
+          </TouchableOpacity>
+        </Row>
+      </View>
     </SafeAreaView>
   );
 };
@@ -49,6 +84,22 @@ const styles = StyleSheet.create({
   },
   list: {
     padding: 12,
+  },
+
+  button: {
+    flexDirection: "row",
+    flex: 1,
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "bold",
+    marginLeft: 8, // Espacement entre l'icône et le texte
   },
 });
 
