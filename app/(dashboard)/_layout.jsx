@@ -3,7 +3,7 @@ import React from "react";
 import { Drawer } from "expo-router/drawer";
 
 const DashboardLayout = () => {
-  return <Drawer screenOptions={{headerShown : false}}/>;
+  return <Drawer screenOptions={{ headerShown: false }} />;
 };
 
 export default DashboardLayout;
