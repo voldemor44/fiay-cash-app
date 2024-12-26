@@ -1,9 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Row, Card } from "../../components";
+import { Row, Card,ThemedText } from "../../components";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { ThemedText } from "../../components/ThemedText";
 import { useNavigation } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";
 

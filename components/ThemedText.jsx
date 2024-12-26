@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   subtitle3: { fontSize: 10, lineHeight: 16, fontWeight: "bold" },
 });
 
-export function ThemedText({ variant, style, cls, ...rest }) {
+export default function ThemedText({ variant, style, cls, ...rest }) {
   return (
     <Text
       style={[styles[variant || "body3"], style]}
