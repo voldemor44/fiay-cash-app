@@ -4,20 +4,8 @@ import { Dropdown } from "react-native-element-dropdown";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
-  const renderLabel = () => {
-    if (value || isFocus) {
-      return (
-        <Text style={[styles.label, isFocus && { color: "green" }]}>
-          Bookmaker
-        </Text>
-      );
-    }
-    return null;
-  };
-
   return (
     <View style={styles.container}>
-      {renderLabel()}
       <Dropdown
         style={[styles.dropdown, isFocus && { borderColor: "blue" }]}
         placeholderStyle={styles.placeholderStyle}
@@ -29,8 +17,8 @@ const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? "Select item" : "..."}
-        searchPlaceholder="Search..."
+        placeholder={!isFocus ? "Choisir le Bookmaker" : "..."}
+        searchPlaceholder="Rechercher..."
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
@@ -41,7 +29,7 @@ const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
         renderLeftIcon={() => (
           <AntDesign
             style={styles.icon}
-            color={isFocus ? "blue" : "black"}
+            color={isFocus ? "green" : "black"}
             name="Safety"
             size={20}
           />
@@ -55,7 +43,7 @@ export default DropdownComponent;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: "transparent",
     padding: 16,
   },
   dropdown: {
@@ -68,15 +56,7 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 5,
   },
-  label: {
-    position: "absolute",
-    backgroundColor: "white",
-    left: 22,
-    top: 8,
-    zIndex: 999,
-    paddingHorizontal: 8,
-    fontSize: 14,
-  },
+
   placeholderStyle: {
     fontSize: 16,
   },
