@@ -27,7 +27,7 @@ const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
         renderLeftIcon={() => (
           <AntDesign
             style={styles.icon}
-            color={isFocus ? "green" : "black"}
+            color={isFocus ? "green" : "#6B7280"}
             name="Safety"
             size={20}
           />
@@ -42,12 +42,12 @@ export default DropdownComponent;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "transparent",
-    padding: 16,
+    paddingHorizontal: 13,
   },
   dropdown: {
     height: 50,
-    borderColor: "gray",
-    borderWidth: 0.5,
+    borderColor: "#D1D5DB",
+    borderWidth: 2,
     borderRadius: 8,
     paddingHorizontal: 8,
   },
@@ -57,6 +57,8 @@ const styles = StyleSheet.create({
 
   placeholderStyle: {
     fontSize: 16,
+    color : "#6B7280",
+    fontWeight:"500"
   },
   selectedTextStyle: {
     fontSize: 16,

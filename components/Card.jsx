@@ -1,15 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons"; 
+import { FontAwesome } from "@expo/vector-icons";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
 
 export default function Card({ text, icon, value }) {
   return (
     <View style={styles.card}>
       <FontAwesome name={icon} size={32} color="green" style={styles.icon} />
-      <Text style={styles.text}>{text}</Text>
-      <Text style={styles.value}>{value}</Text>
+      <Text className="font-pregular" style={styles.text}>
+        {text}
+      </Text>
+      <Text className="font-psemibold" style={styles.value}>
+        {value}
+      </Text>
     </View>
   );
 }
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
   },
   value: {
     fontSize: 18,
-    fontWeight: "bold",
+
     color: "#111",
   },
 });

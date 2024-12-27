@@ -13,7 +13,7 @@ const Header = ({ title }) => {
   return (
     <Row style={styles.header} gap={16} bgcolor="#fffcfc">
       <Ionicons name="menu" size={32} color="green" onPress={openDrawer} />
-      <ThemedText variant={"headline"}>{title}</ThemedText>
+      <Text className="font-semibold text-gray-500 font-psemibold text-2xl">{title}</Text>
     </Row>
   );
 };

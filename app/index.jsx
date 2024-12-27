@@ -25,7 +25,7 @@ const index = () => {
             resizeMode="contain"
           />
 
-          <Text className="text-1xl font-bold text-center text-gray-500 ml-2">
+          <Text className="text-1xl font-bold text-center font-pmedium text-gray-500 ml-2">
             Parrainez et gagnez !
           </Text>
         </View>

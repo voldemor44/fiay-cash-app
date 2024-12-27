@@ -10,11 +10,16 @@ const Dashboard = () => {
     <SafeAreaView style={styles.container}>
       <Header title={"Dashboard"} />
 
-      <View className="ml-5">
-        <ThemedText variant={"headline"}>Welcome Back !</ThemedText>
-        <ThemedText variant={"subtitle1"} cls="mt-2">
+      <View className="ml-5 mt-5">
+        <Text
+          className="font-semibold text-gray-500 font-psemibold"
+          style={{ fontSize: 18 }}
+        >
+          Welcome Back !
+        </Text>
+        <Text className="font-semibold text-gray-500 font-psemibold text-1xl">
           Hi, AYILO Amen
-        </ThemedText>
+        </Text>
       </View>
 
       <View className="justify-center mt-10">
@@ -54,7 +59,9 @@ const Dashboard = () => {
               color="#fff"
               style={styles.icon}
             />
-            <Text style={styles.buttonText}>Retrait</Text>
+            <Text className="font-pregular" style={styles.buttonText}>
+              Retrait
+            </Text>
           </TouchableOpacity>
         </Row>
       </View>
@@ -87,7 +94,6 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 14,
-    fontWeight: "bold",
     marginLeft: 8, // Espacement entre l'icône et le texte
   },
 });
