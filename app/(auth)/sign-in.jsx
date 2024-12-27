@@ -14,7 +14,9 @@ const SignIn = () => {
   });
   const [isSubmitting, setSubmitting] = useState(false);
 
-  const submit = async () => { router.push('(dashboard)')};
+  const submit = async () => {
+    router.push("(dashboard)");
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -57,10 +59,7 @@ const SignIn = () => {
             <Text className=" text-gray-500 font-pregular">
               Vous n'avez pas de compte ?
             </Text>
-            <Link
-              href="/sign-up"
-              className="font-psemibold text-secondary"
-            >
+            <Link href="/sign-up" className="font-psemibold text-secondary">
               S'inscrire
             </Link>
           </View>
