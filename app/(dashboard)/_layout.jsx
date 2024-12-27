@@ -26,6 +26,10 @@ const DashboardLayout = () => {
         name="historique"
         options={{ drawerLabel: "Historique" }}
       />
+      <Drawer.Screen
+        name="send-request"
+        options={{ drawerLabel: "Vérification ID" }}
+      />
     </Drawer>
   );
 };
