@@ -19,7 +19,13 @@ const Header = ({ title }) => {
 };
 
 const styles = StyleSheet.create({
-  header: { paddind: 12, paddingTop: 13, paddingBottom: 13, margin : 0 },
+  header: {
+    paddind: 12,
+    paddingTop: 13,
+    paddingBottom: 13,
+    paddingLeft: 13,
+    margin: 0,
+  },
 });
 
 export default Header;

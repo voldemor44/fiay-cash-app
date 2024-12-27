@@ -1,26 +1,14 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Row, Card,ThemedText } from "../../components";
-import { useNavigation } from "expo-router";
-import { FontAwesome,Ionicons } from "@expo/vector-icons";
+import { Row, Card, ThemedText } from "../../components";
+import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import Header from "../../mod/Header";
 
 const Dashboard = () => {
-  const navigation = useNavigation();
-
-  const openDrawer = () => {
-    navigation.openDrawer();
-  };
-
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Row style={styles.header} gap={16} bgcolor="#fffcfc">
-        <Ionicons name="menu" size={32} color="green" onPress={openDrawer} />
-        <ThemedText variant={"headline"}>Dashboard</ThemedText>
-      </Row> */}
-      
-      <Header title={"Dashboard"}/>
+      <Header title={"Dashboard"} />
 
       <View className="ml-5">
         <ThemedText variant={"headline"}>Welcome Back !</ThemedText>
