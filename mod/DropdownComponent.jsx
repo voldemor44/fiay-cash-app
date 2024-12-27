@@ -13,12 +13,10 @@ const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
         inputSearchStyle={styles.inputSearchStyle}
         iconStyle={styles.iconStyle}
         data={data}
-        search
         maxHeight={300}
         labelField="label"
         valueField="value"
         placeholder={!isFocus ? "Choisir le Bookmaker" : "..."}
-        searchPlaceholder="Rechercher..."
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
