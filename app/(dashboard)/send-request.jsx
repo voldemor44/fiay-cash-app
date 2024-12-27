@@ -1,9 +1,18 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
+import DropdownComponent from "../../mod/DropdownComponent";
+
+const bookmakers = [
+  { label: "1xBet", value: "1" },
+  { label: "MelBet", value: "2" },
+  { label: "WinBet", value: "3" },
+];
 
 const sendRequest = () => {
+  const [bookmaker, setBookmaker] = useState(null);
+  const [isFocus, setIsFocus] = useState(false);
   return (
     <SafeAreaView>
       <Header title={"Vérification ID"} />
@@ -23,7 +32,15 @@ const sendRequest = () => {
       </View>
 
       <View style={styles.container}>
-        <View style={styles.view}></View>
+        <View style={styles.view}>
+          <DropdownComponent
+            data={bookmakers}
+            value={bookmaker}
+            setValue={setBookmaker}
+            isFocus={isFocus}
+            setIsFocus={setIsFocus}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
