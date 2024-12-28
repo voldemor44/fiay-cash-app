@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Row, Card, ThemedText } from "../../components";
-import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Row, Card } from "../../components";
+import { FontAwesome } from "@expo/vector-icons";
 import Header from "../../mod/Header";
 
 const Dashboard = () => {

@@ -19,34 +19,37 @@ const sendRequest = () => {
   return (
     <SafeAreaView>
       <Header title={"Vérification ID"} />
-      <View style={styles.container}>
-        <View style={styles.view}>
-          <DropdownComponent
-            data={bookmakers}
-            value={bookmaker}
-            setValue={setBookmaker}
-            isFocus={isFocus}
-            setIsFocus={setIsFocus}
-          />
-          <FormField
-            value={playerID}
-            handleChangeText={(e) => setPlayerID(e)}
-            placeholder={"ID du joueur"}
-            otherStyles={"mr-4 ml-4"}
-          />
+      <View className=" flex justify-center items-center py-10">
+        <View style={styles.container}>
+          <View style={styles.view}>
+            <DropdownComponent
+              data={bookmakers}
+              value={bookmaker}
+              setValue={setBookmaker}
+              isFocus={isFocus}
+              setIsFocus={setIsFocus}
+            />
+            <FormField
+              value={playerID}
+              handleChangeText={(e) => setPlayerID(e)}
+              placeholder={"ID du joueur"}
+              otherStyles={"mr-4 ml-4"}
+            />
+            <CustomButton title="Soumettre la vérification" containerStyles="mt-4 ml-4 mr-4" />
+          </View>
         </View>
-      </View>
-      <View style={styles.container}>
-        <View style={styles.view}>
-          <Text style={styles.text} className="text-red-500 font-psemibold">
-            Avertissement
-          </Text>
-          <Text style={styles.paragraph} className="font-pregular">
-            Le formulaire ci dessous vous permet de soumettre une requête de
-            validation. Vous devrez y renseigner l'ID du joueur que vous avez
-            parrainé et sélectionner le bookmaker intermédiaire. Il s'agit d'une
-            opération sérieuse. Merci de le faire consciencieusement !
-          </Text>
+        <View style={styles.container}>
+          <View style={styles.view}>
+            <Text style={styles.text} className="text-red-500 font-psemibold">
+              Avertissement
+            </Text>
+            <Text style={styles.paragraph} className="font-pregular">
+              Le formulaire ci dessous vous permet de soumettre une requête de
+              validation. Vous devrez y renseigner l'ID du joueur que vous avez
+              parrainé et sélectionner le bookmaker intermédiaire. Il s'agit
+              d'une opération sérieuse. Merci de le faire consciencieusement !
+            </Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   paragraph: {
-    fontSize: 16,
+    fontSize: 13,
     lineHeight: 24,
     color: "#333",
     textAlign: "justify",
