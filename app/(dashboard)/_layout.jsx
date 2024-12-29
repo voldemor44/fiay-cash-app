@@ -3,7 +3,7 @@ import "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import React from "react";
 import { Drawer } from "expo-router/drawer";
-import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const DashboardLayout = () => {
   return (
@@ -29,7 +29,7 @@ const DashboardLayout = () => {
           options={{
             drawerLabel: "Dashboard",
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="home-outline" size={size} color={color} />
+              <FontAwesome name="home" size={size} color={color} />
             ),
           }}
         />
@@ -38,7 +38,7 @@ const DashboardLayout = () => {
           options={{
             drawerLabel: "Profil",
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="person-outline" size={size} color={color} />
+              <FontAwesome name="user-circle" size={size} color={color} />
             ),
           }}
         />
@@ -47,7 +47,7 @@ const DashboardLayout = () => {
           options={{
             drawerLabel: "Historique",
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="library-outline" size={size} color={color} />
+              <FontAwesome name="history" size={size} color={color} />
             ),
           }}
         />
@@ -56,7 +56,7 @@ const DashboardLayout = () => {
           options={{
             drawerLabel: "Vérification ID",
             drawerIcon: ({ size, color }) => (
-              <Ionicons name="checkbox-outline" size={size} color={color} />
+              <FontAwesome name="check-square" size={size} color={color} />
             ),
           }}
         />
