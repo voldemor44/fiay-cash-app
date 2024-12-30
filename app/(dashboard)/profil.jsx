@@ -35,24 +35,24 @@ const profil = () => {
             />
           </View>
           <TouchableOpacity>
-            <Text style={styles.changePictureText}>Change Picture</Text>
+            <Text style={styles.changePictureText}>Informations</Text>
           </TouchableOpacity>
         </View>
 
         {/* Form Section */}
         <View style={styles.form}>
           <FormField
-            title="Username"
+            title="Non d'utilisateur"
             value={username}
             handleChangeText={(e) => setUsername(e)}
           />
           <FormField
-            title="Email I’d"
+            title="Email"
             value={email}
             handleChangeText={(e) => setEmail(e)}
           />
           <FormField
-            title="Phone Number"
+            title="Téléphone"
             value={phone}
             handleChangeText={(e) => setPhone(e)}
           />
@@ -73,39 +73,7 @@ const profil = () => {
   );
 };
 
-const FormInput = ({ label, value, onChangeText, secureTextEntry }) => {
-  return (
-    <View style={styles.formGroup}>
-      <Text style={styles.label}>{label}</Text>
-      <TextInput
-        style={styles.input}
-        value={value}
-        onChangeText={onChangeText}
-        secureTextEntry={secureTextEntry}
-      />
-    </View>
-  );
-};
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#f9f9f9",
-  },
-  header: {
-    backgroundColor: "#ff867c",
-    height: 100,
-    paddingHorizontal: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingTop: 40,
-  },
-  headerTitle: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "bold",
-  },
   profileSection: {
     alignItems: "center",
   },
