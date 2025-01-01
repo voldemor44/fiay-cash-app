@@ -13,62 +13,78 @@ import { FontAwesome } from "@expo/vector-icons";
 import { FormField, CustomButton } from "../../components";
 
 const profil = () => {
-  const [username, setUsername] = useState("yANCHUI");
-  const [email, setEmail] = useState("yanchui@gmail.com");
-  const [phone, setPhone] = useState("+14987889999");
-  const [password, setPassword] = useState("evFTbyVVCd");
+  const [form, setForm] = useState({
+    first_name: "Amen",
+    last_name: "AYILO",
+    username: "yANCHUI",
+    phone: "+14987889999",
+    email: "yanchui@gmail.com",
+    password: "evFTbyVVCd",
+  });
 
   const [isSubmitting, setSubmitting] = useState(false);
 
   const submit = () => {};
   return (
-    <SafeAreaView>
+    <SafeAreaView className="h-full">
       <Header title={"Profil"} />
-      <ScrollView>
-        <View style={styles.profileSection}>
-          <View style={styles.profileIconContainer}>
-            <FontAwesome
-              name="user"
-              size={80}
-              color="#fff"
-              style={styles.profileIcon}
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <View style={styles.profileSection}>
+            <View style={styles.profileIconContainer}>
+              <FontAwesome
+                name="user"
+                size={80}
+                color="#fff"
+                style={styles.profileIcon}
+              />
+            </View>
+            <TouchableOpacity>
+              <Text style={styles.changePictureText}>Informations</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Form Section */}
+          <View style={styles.form}>
+            <FormField
+              title="Nom"
+              value={form.last_name}
+              handleChangeText={(e) => setForm({ ...form, last_name: e })}
+            />
+            <FormField
+              title="Prénoms"
+              value={form.first_name}
+              handleChangeText={(e) => setForm({ ...form, first_name: e })}
+            />
+            <FormField
+              title="Nom d'utilisateur"
+              value={form.username}
+              handleChangeText={(e) => setForm({ ...form, username: e })}
+            />
+            <FormField
+              title="Email"
+              value={form.email}
+              handleChangeText={(e) => setForm({ ...form, email: e })}
+            />
+            <FormField
+              title="Téléphone"
+              value={form.phone}
+              handleChangeText={(e) => setForm({ ...form, phone: e })}
+            />
+            <FormField
+              title="Password"
+              value={form.password}
+              handleChangeText={(e) => setForm({ ...form, password: e })}
+            />
+            <CustomButton
+              title="Mettre à jour"
+              handlePress={submit}
+              isLoading={isSubmitting}
+              containerStyles="mt-7"
             />
           </View>
-          <TouchableOpacity>
-            <Text style={styles.changePictureText}>Informations</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Form Section */}
-        <View style={styles.form}>
-          <FormField
-            title="Non d'utilisateur"
-            value={username}
-            handleChangeText={(e) => setUsername(e)}
-          />
-          <FormField
-            title="Email"
-            value={email}
-            handleChangeText={(e) => setEmail(e)}
-          />
-          <FormField
-            title="Téléphone"
-            value={phone}
-            handleChangeText={(e) => setPhone(e)}
-          />
-          <FormField
-            title="Password"
-            value={password}
-            handleChangeText={(e) => setPassword(e)}
-          />
-          <CustomButton
-            title="Mettre à jour"
-            handlePress={submit}
-            isLoading={isSubmitting}
-            containerStyles="mt-7"
-          />
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
@@ -95,34 +111,6 @@ const styles = StyleSheet.create({
   form: {
     marginTop: 20,
     paddingHorizontal: 20,
-  },
-  formGroup: {
-    marginBottom: 20,
-  },
-  label: {
-    fontSize: 14,
-    color: "gray",
-    marginBottom: 5,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    backgroundColor: "white",
-  },
-  updateButton: {
-    backgroundColor: "black",
-    paddingVertical: 15,
-    borderRadius: 5,
-    alignItems: "center",
-    marginTop: 10,
-  },
-  updateButtonText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "bold",
   },
 });
 
