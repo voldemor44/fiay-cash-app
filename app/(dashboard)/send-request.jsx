@@ -35,7 +35,10 @@ const sendRequest = () => {
               placeholder={"ID du joueur"}
               otherStyles={"mr-4 ml-4"}
             />
-            <CustomButton title="Soumettre la vérification" containerStyles="mt-4 ml-4 mr-4" />
+            <CustomButton
+              title="Soumettre la vérification"
+              containerStyles="mt-4 ml-4 mr-4"
+            />
           </View>
         </View>
         <View style={styles.container}>
