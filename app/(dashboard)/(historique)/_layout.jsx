@@ -11,19 +11,26 @@ const TopTabs = withLayoutContext(Navigator);
 
 const HistoriqueLayout = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <Header title={"Historique"} />
-
-      <TopTabs id={undefined} screenOptions={{}}>
-        <TopTabs.Screen
-          name="request-historique"
-          options={{ title: "Vérifications" }}
-        />
-        <TopTabs.Screen
-          name="withdrawal-historique"
-          options={{ title: "Retraits" }}
-        />
-      </TopTabs>
+      <View style={{ flex: 1 }}>
+        <TopTabs
+          screenOptions={{
+            tabBarStyle: { backgroundColor: "#fffcfc" },
+            tabBarIndicatorStyle: { backgroundColor: "green", height: 3 },
+            tabBarLabelStyle: { fontSize: 14, fontWeight: "bold" },
+          }}
+        >
+          <TopTabs.Screen
+            name="request-historique"
+            options={{ title: "Vérifications" }}
+          />
+          <TopTabs.Screen
+            name="withdrawal-historique"
+            options={{ title: "Retraits" }}
+          />
+        </TopTabs>
+      </View>
     </SafeAreaView>
   );
 };
