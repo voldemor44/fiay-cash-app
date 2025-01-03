@@ -1,14 +1,12 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from "react-native-safe-area-context";
-
+import { View, Text } from "react-native";
+import React from "react";
 
 const RequestsHistorique = () => {
   return (
-    <SafeAreaView>
+    <View>
       <Text>RequestsHistorique</Text>
-    </SafeAreaView>
-  )
-}
+    </View>
+  );
+};
 
-export default RequestsHistorique
+export default RequestsHistorique;
