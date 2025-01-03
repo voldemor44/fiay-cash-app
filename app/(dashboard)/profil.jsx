@@ -30,7 +30,7 @@ const profil = () => {
       <Header title={"Profil"} />
       <View style={{ flex: 1 }}>
         <ScrollView>
-          <View style={styles.profileSection}>
+          <View style={styles.profileSection} className="mt-4">
             <View style={styles.profileIconContainer}>
               <FontAwesome
                 name="user"
@@ -80,7 +80,7 @@ const profil = () => {
               title="Mettre à jour"
               handlePress={submit}
               isLoading={isSubmitting}
-              containerStyles="mt-7"
+              containerStyles="mt-7 mb-7"
             />
           </View>
         </ScrollView>
