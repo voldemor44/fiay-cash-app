@@ -1,16 +1,13 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Header from "../../mod/Header";
 
-const historique = () => {
+const WithDrawalHistorique = () => {
   return (
     <SafeAreaView>
-      <Header title={"Historique"} />
-
-      <Text>historique</Text>
+      <Text>WithDrawalHistorique</Text>
     </SafeAreaView>
   );
 };
 
-export default historique;
+export default WithDrawalHistorique;

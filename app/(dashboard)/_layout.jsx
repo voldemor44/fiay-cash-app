@@ -43,7 +43,7 @@ const DashboardLayout = () => {
           }}
         />
         <Drawer.Screen
-          name="historique"
+          name="(historique)"
           options={{
             drawerLabel: "Historique",
             drawerIcon: ({ size, color }) => (
