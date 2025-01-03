@@ -4,8 +4,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../../mod/Header";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { withLayoutContext } from "expo-router";
-import RequestsHistorique from "./request-historique";
-import WithDrawalHistorique from "./withdrawal-historique";
 
 const { Navigator } = createMaterialTopTabNavigator();
 
