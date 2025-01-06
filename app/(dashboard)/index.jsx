@@ -31,7 +31,7 @@ const Dashboard = () => {
           <Card text="Gains" icon="money" value="10000" />
           <Card text="Solde" icon="dollar" value="3000" />
         </Row>
-        <Row gap={12} className="justify-center">
+        <Row gap={12} className="justify-center" style={styles.buttonRow}>
           <TouchableOpacity
             style={[styles.button, { backgroundColor: "gray" }]}
             className="justify-center text-gray-500 ml-4"
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
   list: {
     padding: 12,
   },
+  buttonRow: { paddingTop: 30 },
 
   button: {
     flexDirection: "row",
