@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Row, Card } from "../../components";
 import { FontAwesome } from "@expo/vector-icons";
 import Header from "../../mod/Header";
+import { router } from "expo-router";
 
 const Dashboard = () => {
   return (
@@ -35,6 +36,9 @@ const Dashboard = () => {
           <TouchableOpacity
             style={[styles.button, { backgroundColor: "gray" }]}
             className="justify-center text-gray-500 ml-4"
+            onPress={() => {
+              router.push("send-request");
+            }}
           >
             <FontAwesome
               name="copy"
