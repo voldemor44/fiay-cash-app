@@ -15,7 +15,7 @@ const SignIn = () => {
   const [isSubmitting, setSubmitting] = useState(false);
 
   const submit = async () => {
-    router.push("(dashboard)");
+    router.push("(admin)");
   };
 
   return (
