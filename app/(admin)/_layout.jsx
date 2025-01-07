@@ -60,6 +60,12 @@ const AdminLayout = () => {
             ),
           }}
         />
+        <Drawer.Screen
+          name="payment-page"
+          options={{
+            drawerItemStyle: { display: "none" },
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
