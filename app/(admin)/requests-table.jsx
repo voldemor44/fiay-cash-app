@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const AdminLayout = () => {
+const RequestsTable = () => {
   return (
     <View>
-      <Text>AdminLayout</Text>
+      <Text>RequestsTable</Text>
     </View>
   );
 };
 
-export default AdminLayout;
+export default RequestsTable;
