@@ -40,29 +40,15 @@ const Dashboard = () => {
               router.push("send-request");
             }}
           >
-            <FontAwesome
-              name="copy"
-              size={16}
-              color="#fff"
-              style={styles.icon}
-            />
+            <FontAwesome name="copy" size={16} color="#fff" />
             <Text style={styles.buttonText}>VISE25</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[
-              styles.button,
-              styles.retraitButton,
-              { backgroundColor: "green" },
-            ]}
+            style={[styles.button, { backgroundColor: "green" }]}
             className="justify-center mr-4"
           >
-            <FontAwesome
-              name="copy"
-              size={16}
-              color="#fff"
-              style={styles.icon}
-            />
+            <FontAwesome name="copy" size={16} color="#fff" />
             <Text className="font-pregular" style={styles.buttonText}>
               Retrait
             </Text>

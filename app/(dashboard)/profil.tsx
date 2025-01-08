@@ -32,12 +32,7 @@ const profil = () => {
         <ScrollView>
           <View style={styles.profileSection} className="mt-4">
             <View style={styles.profileIconContainer}>
-              <FontAwesome
-                name="user"
-                size={80}
-                color="#fff"
-                style={styles.profileIcon}
-              />
+              <FontAwesome name="user" size={80} color="#fff" />
             </View>
             <TouchableOpacity>
               <Text style={styles.changePictureText}>Informations</Text>

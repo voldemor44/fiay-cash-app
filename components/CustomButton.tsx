@@ -1,12 +1,20 @@
 import { ActivityIndicator, Text, TouchableOpacity } from "react-native";
 
+type ButtonProps = {
+  title: string;
+  handlePress?: () => void;
+  containerStyles?: string;
+  textStyles?: string;
+  isLoading?: boolean;
+};
+
 export default ({
   title,
   handlePress,
   containerStyles,
   textStyles,
   isLoading,
-}) => {
+}: ButtonProps) => {
   return (
     <TouchableOpacity
       onPress={handlePress}

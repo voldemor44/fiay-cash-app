@@ -1,11 +1,16 @@
 import "react-native-gesture-handler";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Drawer } from "expo-router/drawer";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { useSharedValue } from "react-native-reanimated";
 
 const AdminLayout = () => {
+  const [data, setData] = useState([]);
+  const totalValue = useSharedValue(0);
+  const decimals = useSharedValue([]);
+  
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer

@@ -3,12 +3,13 @@ import React from "react";
 import { Row, ThemedText } from "../components";
 import { useNavigation } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { DrawerActions } from "@react-navigation/native";
 
 const Header = ({ title }) => {
   const navigation = useNavigation();
 
   const openDrawer = () => {
-    navigation.openDrawer();
+    navigation.dispatch(DrawerActions.openDrawer());
   };
   return (
     <Row style={styles.header} gap={16} bgcolor="#fffcfc">
@@ -20,7 +21,7 @@ const Header = ({ title }) => {
 
 const styles = StyleSheet.create({
   header: {
-    paddind: 12,
+    padding: 12,
     paddingTop: 13,
     paddingBottom: 13,
     paddingLeft: 13,
