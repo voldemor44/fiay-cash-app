@@ -1,5 +1,5 @@
-const caluculatePercentage = (numbers, total) => {
-  const percentageArray = [];
+const caluculatePercentage = (numbers: number[], total: number) => {
+  const percentageArray: number[] = [];
 
   numbers.forEach((number) => {
     const percentage = Math.round((number / total) * 100);
