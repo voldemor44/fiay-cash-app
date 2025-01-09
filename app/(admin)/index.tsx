@@ -56,8 +56,8 @@ const AdminDashboard = () => {
         </View>
         <View className="justify-center mt-10">
           <Row className="justify-center">
-            <Card text="Gains" icon="money" value="10000" />
-            <Card text="Solde" icon="dollar" value="3000" />
+            <Card text="Gains" icon="sack-dollar" value="10000" />
+            <Card text="Solde" icon="money-bill-transfer" value="3000" />
           </Row>
         </View>
         <View className="justify-center mt-10">

@@ -1,12 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { FontAwesome6 } from "@expo/vector-icons";
 
 export default function Card({ text, icon, value }) {
   return (
     <View style={styles.card}>
-      <FontAwesome name={icon} size={32} color="green" style={styles.icon} />
+      <FontAwesome6 name={icon} size={32} color="green" style={styles.icon} />
       <Text className="font-pregular" style={styles.text}>
         {text}
       </Text>

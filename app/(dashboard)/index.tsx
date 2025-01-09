@@ -29,8 +29,8 @@ const Dashboard = () => {
           <Card text="Niveau" icon="star" value="3" />
         </Row>
         <Row className="justify-center">
-          <Card text="Gains" icon="money" value="10000" />
-          <Card text="Solde" icon="dollar" value="3000" />
+          <Card text="Gains" icon="money-bill" value="10000" />
+          <Card text="Solde" icon="sack-dollar" value="3000" />
         </Row>
         <Row gap={12} className="justify-center" style={styles.buttonRow}>
           <TouchableOpacity
