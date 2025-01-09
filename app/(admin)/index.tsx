@@ -33,6 +33,8 @@ const AdminDashboard = () => {
     const generateDecimals = generatePercentage.map(
       (number) => Number(number.toFixed(0)) / 100
     );
+
+    const arrayOfObjects = generateNumbers.map(() => {});
     return { generateNumbers, total, generatePercentage, generateDecimals };
   };
 
