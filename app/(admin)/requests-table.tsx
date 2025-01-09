@@ -6,7 +6,7 @@ import Header from "../../mod/Header";
 const RequestsTable = () => {
   return (
     <SafeAreaView>
-       <Header title={"Listes"} />
+      <Header title={"Listes"} />
       <Text>RequestsTable</Text>
     </SafeAreaView>
   );
