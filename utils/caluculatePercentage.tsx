@@ -9,3 +9,5 @@ const caluculatePercentage = (numbers: number[], total: number) => {
 
   return percentageArray;
 };
+
+export default caluculatePercentage

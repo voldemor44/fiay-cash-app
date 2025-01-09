@@ -1,11 +1,41 @@
 import { View, ScrollView, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { Card, Row } from "../../components";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { useSharedValue } from "react-native-reanimated";
+import generateRandomNumbers from "../../utils/generateRandomNumbers";
+import caluculatePercentage from "../../utils/caluculatePercentage";
+
+type Props = {};
+
+interface Data {
+  value: number;
+  percentage: number;
+  color: string;
+}
 
 const AdminDashboard = () => {
+  const n = 2;
+  const [data, setData] = useState<Data[]>([]);
+  const totalValue = useSharedValue(0);
+  const decimals = useSharedValue<number[]>([]);
+  const colors = [];
+
+  const generateData = () => {
+    const generateNumbers = generateRandomNumbers(n);
+    const total = generateNumbers.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
+
+    const generatePercentage = caluculatePercentage(generateNumbers, total);
+    const generateDecimals = generatePercentage.map(
+      (number) => Number(number.toFixed(0)) / 100
+    );
+    return { generateNumbers, total, generatePercentage, generateDecimals };
+  };
+
   return (
     <SafeAreaView>
       <Header title={"Dashboard"} />
