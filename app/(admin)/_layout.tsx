@@ -42,6 +42,16 @@ const AdminLayout = () => {
           }}
         />
         <Drawer.Screen
+          name="check-page"
+          options={{
+            drawerLabel: "Vérifications",
+            drawerIcon: ({ size, color }) => (
+              <FontAwesome name="check-square" size={size} color={color} />
+            ),
+           
+          }}
+        />
+        <Drawer.Screen
           name="historique-admin"
           options={{
             drawerLabel: "Historique",
@@ -57,12 +67,6 @@ const AdminLayout = () => {
             drawerIcon: ({ size, color }) => (
               <Ionicons name="settings" size={size} color={color} />
             ),
-          }}
-        />
-        <Drawer.Screen
-          name="payment-page"
-          options={{
-            drawerItemStyle: { display: "none" },
           }}
         />
       </Drawer>

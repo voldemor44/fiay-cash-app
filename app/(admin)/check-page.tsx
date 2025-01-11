@@ -2,12 +2,12 @@ import { View, Text } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const PaymentPage = () => {
+const CheckPage = () => {
   return (
     <SafeAreaView>
-      <Text>PaymentPage</Text>
+      <Text>CheckPage</Text>
     </SafeAreaView>
   );
 };
 
-export default PaymentPage;
+export default CheckPage;
