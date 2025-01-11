@@ -3,6 +3,8 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import React from "react";
 import { Drawer } from "expo-router/drawer";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
+import { Text } from "react-native";
+import DrawerLabel from "../../mod/DrawerLabel";
 
 const AdminLayout = () => {
   return (
@@ -26,7 +28,9 @@ const AdminLayout = () => {
         <Drawer.Screen
           name="index"
           options={{
-            drawerLabel: "Dashboard",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Dashboard" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="home" size={size} color={color} />
             ),
@@ -35,7 +39,9 @@ const AdminLayout = () => {
         <Drawer.Screen
           name="requests-table"
           options={{
-            drawerLabel: "Listes",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Listes" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="table" size={size} color={color} />
             ),
@@ -44,17 +50,20 @@ const AdminLayout = () => {
         <Drawer.Screen
           name="check-page"
           options={{
-            drawerLabel: "Vérifications",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Vérifications ID" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="check-square" size={size} color={color} />
             ),
-           
           }}
         />
         <Drawer.Screen
           name="historique-admin"
           options={{
-            drawerLabel: "Historique",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Historiques" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="history" size={size} color={color} />
             ),
@@ -63,7 +72,9 @@ const AdminLayout = () => {
         <Drawer.Screen
           name="parameters"
           options={{
-            drawerLabel: "Paramètres",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Paramètres" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <Ionicons name="settings" size={size} color={color} />
             ),

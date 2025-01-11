@@ -3,43 +3,37 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { Row } from "../../components";
+import { FontAwesome6 } from "@expo/vector-icons";
 
 const CheckPage = () => (
   <SafeAreaView>
     <Header title={"Vérifications ID"} />
-    <View>
-      <Row>
-        <TouchableOpacity style={styles.dropZone} activeOpacity={0.7}>
-          <Image
-            source={{
-              uri: "https://img.icons8.com/ios/50/000000/upload--v1.png", // Exemple d'icône
-            }}
-            style={styles.icon}
-          />
-          <Text style={styles.text}>Drag your file here</Text>
+    <View className="justify-center items-center">
+      <Row className="pt-5">
+        <TouchableOpacity
+          className="justify-center items-center"
+          style={styles.dropZone}
+          activeOpacity={0.7}
+        >
+          <FontAwesome6 name="upload" size={30} color="green" />
+          <Text className="font-pmedium text-gray-500 mt-2" style={styles.text}>
+            Drag your file here
+          </Text>
         </TouchableOpacity>
       </Row>
+      <Row></Row>
     </View>
   </SafeAreaView>
 );
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 16,
-    backgroundColor: "#f5f5f5",
-  },
   dropZone: {
     width: "90%",
     height: 150,
     borderWidth: 1,
     borderStyle: "dashed",
-    borderColor: "#007BFF",
+    borderColor: "green",
     borderRadius: 8,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#fdfdfd",
   },
   icon: {
@@ -49,7 +43,6 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: "#333",
   },
 });
 

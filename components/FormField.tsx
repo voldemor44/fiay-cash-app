@@ -9,6 +9,7 @@ import {
 } from "react-native";
 
 import { icons } from "../constants";
+import React from "react";
 
 type FormFieldProps = {
   title?: string;
