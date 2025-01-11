@@ -1,10 +1,9 @@
+import React from "react";
 import { useState } from "react";
 import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Image } from "react-native";
-
 import { images } from "../../constants";
-
 import { FormField, CustomButton } from "../../components";
 
 const SignIn = () => {

@@ -4,6 +4,7 @@ import Header from "../../mod/Header";
 import { DataTable, PaperProvider } from "react-native-paper";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Row } from "../../components";
+import { router } from "expo-router";
 import { FontAwesome } from "@expo/vector-icons";
 
 const RequestsTable = () => {
@@ -67,6 +68,9 @@ const RequestsTable = () => {
             <TouchableOpacity
               style={[styles.button, { backgroundColor: "green" }]}
               className="justify-center mr-4"
+              onPress={() => {
+                router.push("check-page");
+              }}
             >
               <Text className="font-pregular" style={{ color: "#fff" }}>
                 Lancer un check
