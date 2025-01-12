@@ -3,6 +3,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import React from "react";
 import { Drawer } from "expo-router/drawer";
 import { FontAwesome } from "@expo/vector-icons";
+import DrawerLabel from "../../mod/DrawerLabel";
 
 const DashboardLayout = () => {
   return (
@@ -14,19 +15,17 @@ const DashboardLayout = () => {
             backgroundColor: "#f9f9f9",
             width: 250,
           },
-          drawerLabelStyle: {
-            fontSize: 16,
-            fontWeight: "bold",
-          },
           drawerActiveTintColor: "green",
-          drawerInactiveTintColor: "gray", // Couleur du texte inactif
+          drawerInactiveTintColor: "gray",
           drawerActiveBackgroundColor: "transparent",
         }}
       >
         <Drawer.Screen
           name="index"
           options={{
-            drawerLabel: "Dashboard",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Dashboard" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="home" size={size} color={color} />
             ),
@@ -35,7 +34,9 @@ const DashboardLayout = () => {
         <Drawer.Screen
           name="profil"
           options={{
-            drawerLabel: "Profil",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Profil" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="user-circle" size={size} color={color} />
             ),
@@ -44,7 +45,9 @@ const DashboardLayout = () => {
         <Drawer.Screen
           name="(historique)"
           options={{
-            drawerLabel: "Historique",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Historiques" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="history" size={size} color={color} />
             ),
@@ -53,7 +56,9 @@ const DashboardLayout = () => {
         <Drawer.Screen
           name="send-request"
           options={{
-            drawerLabel: "Vérification ID",
+            drawerLabel: ({ color }) => (
+              <DrawerLabel label="Vérification ID" color={color} />
+            ),
             drawerIcon: ({ size, color }) => (
               <FontAwesome name="check-square" size={size} color={color} />
             ),
