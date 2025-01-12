@@ -16,10 +16,6 @@ const AdminLayout = () => {
             backgroundColor: "#f9f9f9",
             width: 250,
           },
-          drawerLabelStyle: {
-            fontSize: 16,
-            fontWeight: "bold",
-          },
           drawerActiveTintColor: "green",
           drawerInactiveTintColor: "gray", // Couleur du texte inactif
           drawerActiveBackgroundColor: "transparent",
