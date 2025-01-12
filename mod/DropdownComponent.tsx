@@ -3,7 +3,14 @@ import { StyleSheet, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus, placeholder }) => {
+const DropdownComponent = ({
+  data,
+  value,
+  setValue,
+  isFocus,
+  setIsFocus,
+  placeholder,
+}) => {
   return (
     <View style={styles.container}>
       <Dropdown
@@ -54,14 +61,16 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 5,
   },
-
   placeholderStyle: {
-    fontSize: 16,
-    color : "#6B7280",
-    fontWeight:"500"
+    fontSize: 14,
+    color: "#6b7280",
+    fontFamily: "Poppins-SemiBold",
   },
   selectedTextStyle: {
-    fontSize: 16,
+    fontSize: 14,
+    color: "#6b7280",
+    marginTop: 3,
+    fontFamily: "Poppins-SemiBold",
   },
   iconStyle: {
     width: 20,
