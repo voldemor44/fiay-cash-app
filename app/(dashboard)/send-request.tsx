@@ -28,6 +28,7 @@ const sendRequest = () => {
               setValue={setBookmaker}
               isFocus={isFocus}
               setIsFocus={setIsFocus}
+              placeholder={"Choisir le Bookmaker"}
             />
             <FormField
               value={playerID}

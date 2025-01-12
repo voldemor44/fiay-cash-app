@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { Dropdown } from "react-native-element-dropdown";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
+const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus, placeholder }) => {
   return (
     <View style={styles.container}>
       <Dropdown
@@ -16,7 +16,7 @@ const DropdownComponent = ({ data, value, setValue, isFocus, setIsFocus }) => {
         maxHeight={300}
         labelField="label"
         valueField="value"
-        placeholder={!isFocus ? "Choisir le Bookmaker" : "..."}
+        placeholder={!isFocus ? placeholder : "..."}
         value={value}
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
