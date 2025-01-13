@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { CustomButton, Row } from "../../components";
-import { FontAwesome6 } from "@expo/vector-icons";
+import { FontAwesome6, FontAwesome } from "@expo/vector-icons";
 import DropdownComponent from "../../mod/DropdownComponent";
 import * as DocumentPicker from "expo-document-picker";
 
@@ -39,6 +39,18 @@ const CheckPage = () => {
     <SafeAreaView>
       <Header title={"Vérifications ID"} />
       <View className="flex justify-center items-center py-20">
+        {fileName ? (
+          <View style={styles.container}>
+            <FontAwesome
+              className="text-gray-500"
+              name="window-close-o"
+              size={25}
+              color="green"
+              style={styles.rightAligned}
+              onPress={() => {}}
+            />
+          </View>
+        ) : null}
         <Row className="pt-5">
           <TouchableOpacity
             className="justify-center items-center"
@@ -46,12 +58,16 @@ const CheckPage = () => {
             activeOpacity={0.7}
             onPress={handleFilePick}
           >
-            <FontAwesome6 name="upload" size={30} color="green" />
+            <FontAwesome6
+              name={fileName ? "file-lines" : "upload"}
+              size={30}
+              color="green"
+            />
             <Text
               className="font-pmedium text-gray-500 mt-2"
               style={styles.text}
             >
-              Drag your file here
+              {fileName ? fileName : "Drag your file here"}
             </Text>
           </TouchableOpacity>
         </Row>
@@ -94,6 +110,12 @@ const styles = StyleSheet.create({
   dropdownRow: {
     width: "100%",
     padding: 20,
+  },
+  container: {
+    flexDirection: "row",
+  },
+  rightAligned: {
+    marginLeft: 250,
   },
 });
 
