@@ -17,16 +17,18 @@ const CheckPage = () => {
   const [bookmaker, setBookmaker] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [fileSelected, setFileSelected] = useState(null);
 
   const handleFilePick = async () => {
     try {
       const result = await DocumentPicker.getDocumentAsync({
-        type: "*/*", // Permet tous les types de fichiers
+        type: "*/*",
       });
 
       if (result.assets) {
         setFileName(result.assets[0].name);
-        console.log(result.assets[0].name);
+        setFileSelected(result.assets[0]);
+        console.log(result.assets[0]);
       } else {
         console.log("Action annulée");
       }
@@ -35,19 +37,25 @@ const CheckPage = () => {
     }
   };
 
+  const cancelFilePicked = () => {
+    setFileName(null);
+    setFileSelected(null);
+  };
+
   return (
     <SafeAreaView>
       <Header title={"Vérifications ID"} />
       <View className="flex justify-center items-center py-20">
         {fileName ? (
           <View style={styles.container}>
-            <FontAwesome
-              name="window-close-o"
-              size={25}
-              color="green"
-              style={styles.rightAligned}
-              onPress={() => {}}
-            />
+            <TouchableOpacity onPress={cancelFilePicked}>
+              <FontAwesome
+                name="window-close-o"
+                size={25}
+                color="#6b7280"
+                style={styles.rightAligned}
+              />
+            </TouchableOpacity>
           </View>
         ) : null}
         <Row className="pt-5">
