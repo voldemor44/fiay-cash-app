@@ -42,7 +42,6 @@ const CheckPage = () => {
         {fileName ? (
           <View style={styles.container}>
             <FontAwesome
-              className="text-gray-500"
               name="window-close-o"
               size={25}
               color="green"
