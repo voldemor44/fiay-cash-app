@@ -1,12 +1,20 @@
-import { View, ScrollView, Text, TouchableOpacity } from "react-native";
+import {
+  View,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { Card, Row } from "../../components";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
-import { useSharedValue } from "react-native-reanimated";
+import { useSharedValue, withTiming } from "react-native-reanimated";
 import generateRandomNumbers from "../../utils/generateRandomNumbers";
 import caluculatePercentage from "../../utils/caluculatePercentage";
+import DonutChart from "../../mod/DonutChart";
+import { useFont } from "@shopify/react-native-skia";
 
 type Props = {};
 
@@ -16,12 +24,17 @@ interface Data {
   color: string;
 }
 
+const RADUIS = 80;
+const STROKE_WIDTH = 15;
+const OUTER_STROKE_WIDTH = 25;
+const GAP = 0.04;
+
 const AdminDashboard = () => {
   const n = 2;
   const [data, setData] = useState<Data[]>([]);
   const totalValue = useSharedValue(0);
   const decimals = useSharedValue<number[]>([]);
-  const colors = [];
+  const colors = ["#6b7280", "#16a34a"];
 
   const generateData = () => {
     const generateNumbers = generateRandomNumbers(n);
@@ -34,8 +47,15 @@ const AdminDashboard = () => {
       (number) => Number(number.toFixed(0)) / 100
     );
 
-    const arrayOfObjects = generateNumbers.map(() => {});
-    return { generateNumbers, total, generatePercentage, generateDecimals };
+    const arrayOfObjects = generateNumbers.map((value, index) => ({
+      value,
+      percentage: generatePercentage[index],
+      color: colors[index],
+    }));
+
+    totalValue.value = withTiming(total, { duration: 1000 });
+    decimals.value = [...generateDecimals];
+    setData(arrayOfObjects);
   };
 
   return (
@@ -60,12 +80,25 @@ const AdminDashboard = () => {
             <Card text="Transferts" icon="money-bill-transfer" value="3000" />
           </Row>
         </View>
-        <View className="justify-center mt-10">
-          <Row className="justify-center"></Row>
-        </View>
+        <Row className="justify-center  mt-10" style={styles.donutContainer}>
+          <DonutChart
+            n={n}
+            totalValue={totalValue}
+            decimals={decimals}
+            radius={RADUIS}
+            gap={GAP}
+            strokeWidth={STROKE_WIDTH}
+            outerStrokeWidth={OUTER_STROKE_WIDTH}
+            colors={colors}
+          />
+        </Row>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 export default AdminDashboard;
+
+const styles = StyleSheet.create({
+  donutContainer: { width: RADUIS * 2, height: RADUIS * 2 },
+});
