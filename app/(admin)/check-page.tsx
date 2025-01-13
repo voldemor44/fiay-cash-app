@@ -5,7 +5,7 @@ import Header from "../../mod/Header";
 import { CustomButton, Row } from "../../components";
 import { FontAwesome6 } from "@expo/vector-icons";
 import DropdownComponent from "../../mod/DropdownComponent";
-import * as DocumentPicker from 'expo-document-picker';
+import * as DocumentPicker from "expo-document-picker";
 
 const bookmakers = [
   { label: "1xBet", value: "1" },
@@ -18,18 +18,18 @@ const CheckPage = () => {
   const [isFocus, setIsFocus] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
 
-
   const handleFilePick = async () => {
     try {
       const result = await DocumentPicker.getDocumentAsync({
         type: "*/*", // Permet tous les types de fichiers
       });
 
-      // if (result.type === "success") {
-      //   setFileName(result.name); // Nom du fichier sélectionné
-      // } else {
-      //   console.log("Action annulée");
-      // }
+      if (result.assets) {
+        setFileName(result.assets[0].name);
+        console.log(result.assets[0].name);
+      } else {
+        console.log("Action annulée");
+      }
     } catch (error) {
       console.error("Erreur lors de la sélection du fichier :", error);
     }
@@ -44,6 +44,7 @@ const CheckPage = () => {
             className="justify-center items-center"
             style={styles.dropZone}
             activeOpacity={0.7}
+            onPress={handleFilePick}
           >
             <FontAwesome6 name="upload" size={30} color="green" />
             <Text
