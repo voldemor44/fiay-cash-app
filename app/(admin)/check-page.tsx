@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { CustomButton, Row } from "../../components";
 import { FontAwesome6 } from "@expo/vector-icons";
 import DropdownComponent from "../../mod/DropdownComponent";
+import * as DocumentPicker from 'expo-document-picker';
 
 const bookmakers = [
   { label: "1xBet", value: "1" },
@@ -15,6 +16,24 @@ const bookmakers = [
 const CheckPage = () => {
   const [bookmaker, setBookmaker] = useState(null);
   const [isFocus, setIsFocus] = useState(false);
+  const [fileName, setFileName] = useState<string | null>(null);
+
+
+  const handleFilePick = async () => {
+    try {
+      const result = await DocumentPicker.getDocumentAsync({
+        type: "*/*", // Permet tous les types de fichiers
+      });
+
+      // if (result.type === "success") {
+      //   setFileName(result.name); // Nom du fichier sélectionné
+      // } else {
+      //   console.log("Action annulée");
+      // }
+    } catch (error) {
+      console.error("Erreur lors de la sélection du fichier :", error);
+    }
+  };
 
   return (
     <SafeAreaView>
