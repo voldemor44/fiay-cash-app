@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
-import { Row } from "../../components";
+import { CustomButton, Row } from "../../components";
 import { FontAwesome6 } from "@expo/vector-icons";
 import DropdownComponent from "../../mod/DropdownComponent";
 
@@ -19,7 +19,7 @@ const CheckPage = () => {
   return (
     <SafeAreaView>
       <Header title={"Vérifications ID"} />
-      <View className="justify-center items-center">
+      <View className="flex justify-center items-center py-20">
         <Row className="pt-5">
           <TouchableOpacity
             className="justify-center items-center"
@@ -43,6 +43,10 @@ const CheckPage = () => {
             isFocus={isFocus}
             setIsFocus={setIsFocus}
             placeholder={"Choisir le Bookmaker"}
+          />
+          <CustomButton
+            title="Lancer le check"
+            containerStyles="mt-3 mr-4 ml-4"
           />
         </View>
       </View>
