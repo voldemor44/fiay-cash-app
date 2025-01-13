@@ -2,16 +2,25 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
 
-export default function Card({ text, icon, value }) {
+export default function Card({ text, icon, value, type }) {
   return (
     <View style={styles.card}>
-      <FontAwesome6 name={icon} size={32} color="green" style={styles.icon} />
-      <Text className="font-pregular" style={styles.text}>
-        {text}
-      </Text>
-      <Text className="font-psemibold" style={styles.value}>
-        {value}
-      </Text>
+      {type === "icon" && (
+        <>
+          <FontAwesome6
+            name={icon}
+            size={32}
+            color="green"
+            style={styles.icon}
+          />
+          <Text className="font-pregular" style={styles.text}>
+            {text}
+          </Text>
+          <Text className="font-psemibold" style={styles.value}>
+            {value}
+          </Text>
+        </>
+      )}
     </View>
   );
 }
@@ -21,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f9f9f9",
     borderRadius: 8,
     padding: 16,
-    width: 150, // Largeur fixe pour une forme rectangulaire ou carrée
+    width: 150,
     alignItems: "center",
     justifyContent: "space-between",
     shadowColor: "#000",
