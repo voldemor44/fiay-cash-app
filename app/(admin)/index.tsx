@@ -24,7 +24,7 @@ interface Data {
   color: string;
 }
 
-const RADUIS = 80;
+const RADUIS = 75;
 const STROKE_WIDTH = 15;
 const OUTER_STROKE_WIDTH = 25;
 const GAP = 0.04;
@@ -76,13 +76,8 @@ const AdminDashboard = () => {
         </View>
         <View className="justify-center mt-10">
           <Row className="justify-center">
-            <Card text="Solde" icon="sack-dollar" value="10000" type="icon" />
-            <Card
-              text="Transferts"
-              icon="money-bill-transfer"
-              value="3000"
-              type="icon"
-            />
+            <Card text="Solde" icon="sack-dollar" value="10000" />
+            <Card text="Transferts" icon="money-bill-transfer" value="3000" />
           </Row>
         </View>
         <Row className="justify-center  mt-10" style={styles.donutContainer}>

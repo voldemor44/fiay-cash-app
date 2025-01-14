@@ -31,17 +31,12 @@ const DonutChart = ({
   const path = Skia.Path.Make();
   path.addCircle(radius, radius, innerRadius);
 
-  const targetText = useDerivedValue(
-    () => `$${Math.round(totalValue.value)}`,
-    []
-  );
-
   return (
     <View style={styles.container}>
       <Canvas style={styles.container}>
         <Path
           path={path}
-          color="#f4f7fc"
+          color="green"
           style="stroke"
           strokeJoin="round"
           strokeWidth={outerStrokeWidth}

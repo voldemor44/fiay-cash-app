@@ -2,10 +2,19 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
 
-export default function Card({ text, icon, value, type }) {
+type Props = {
+  text?: string;
+  icon?: string;
+  value?: string;
+  children?: React.ReactNode;
+};
+
+export default function Card({ text, icon, value, children }: Props) {
   return (
     <View style={styles.card}>
-      {type === "icon" && (
+      {children ? (
+        <>{children}</>
+      ) : (
         <>
           <FontAwesome6
             name={icon}
@@ -50,7 +59,6 @@ const styles = StyleSheet.create({
   },
   value: {
     fontSize: 18,
-
     color: "#111",
   },
 });
