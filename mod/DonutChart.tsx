@@ -1,7 +1,7 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import React from "react";
 import { SharedValue, useDerivedValue } from "react-native-reanimated";
-import { Canvas, Path, SkFont, Skia, Text } from "@shopify/react-native-skia";
+import { Canvas, Path, Skia } from "@shopify/react-native-skia";
 import DonutPath from "./DonutPath";
 
 type Props = {
@@ -32,11 +32,11 @@ const DonutChart = ({
   path.addCircle(radius, radius, innerRadius);
 
   return (
-    <View style={styles.container}>
-      <Canvas style={styles.container}>
+    <View style={styles.containerView} className="pt-8">
+      <Canvas style={styles.containerCanvas}>
         <Path
           path={path}
-          color="green"
+          color="transparent"
           style="stroke"
           strokeJoin="round"
           strokeWidth={outerStrokeWidth}
@@ -66,7 +66,23 @@ const DonutChart = ({
 export default DonutChart;
 
 const styles = StyleSheet.create({
-  container: {
+  containerView: {
     flex: 1,
+    backgroundColor: "#f9f9f9",
+    width: "auto",
+    borderRadius: 8,
+    justifyContent: "space-between",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 5,
+    margin: 8,
+    paddingLeft: 10,
+  },
+  containerCanvas: {
+    flex: 1,
+    backgroundColor: "transparent",
+    alignItems: "center",
   },
 });

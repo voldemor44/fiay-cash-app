@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../mod/Header";
 import { Card, Row } from "../../components";
@@ -14,7 +14,6 @@ import { useSharedValue, withTiming } from "react-native-reanimated";
 import generateRandomNumbers from "../../utils/generateRandomNumbers";
 import caluculatePercentage from "../../utils/caluculatePercentage";
 import DonutChart from "../../mod/DonutChart";
-import { useFont } from "@shopify/react-native-skia";
 
 type Props = {};
 
@@ -24,8 +23,8 @@ interface Data {
   color: string;
 }
 
-const RADUIS = 75;
-const STROKE_WIDTH = 15;
+const RADUIS = 70;
+const STROKE_WIDTH = 13;
 const OUTER_STROKE_WIDTH = 25;
 const GAP = 0.04;
 
@@ -58,6 +57,9 @@ const AdminDashboard = () => {
     setData(arrayOfObjects);
   };
 
+  useEffect(() => {
+    generateData();
+  }, []);
   return (
     <SafeAreaView>
       <Header title={"Dashboard"} />
@@ -80,7 +82,10 @@ const AdminDashboard = () => {
             <Card text="Transferts" icon="money-bill-transfer" value="3000" />
           </Row>
         </View>
-        <Row className="justify-center  mt-10" style={styles.donutContainer}>
+        <Row
+          className="justify-center items-center mt-8"
+          style={styles.donutContainer}
+        >
           <DonutChart
             n={n}
             totalValue={totalValue}
@@ -91,6 +96,20 @@ const AdminDashboard = () => {
             outerStrokeWidth={OUTER_STROKE_WIDTH}
             colors={colors}
           />
+          <View>
+            <Row>
+              <Text className="font-pmedium text-green-600  text-1xl">
+                Taux de dépot :{" "}
+              </Text>
+              <Text className="font-pmedium text-green-600  text-1xl">34%</Text>
+            </Row>
+            <Row>
+              <Text className="font-pmedium text-gray-500  text-1xl">
+                Taux de d'envoi :{" "}
+              </Text>
+              <Text className="font-pmedium text-gray-500  text-1xl">66%</Text>
+            </Row>
+          </View>
         </Row>
       </ScrollView>
     </SafeAreaView>
@@ -100,5 +119,5 @@ const AdminDashboard = () => {
 export default AdminDashboard;
 
 const styles = StyleSheet.create({
-  donutContainer: { width: RADUIS * 2, height: RADUIS * 2 },
+  donutContainer: { width: 325, height: RADUIS * 3, marginLeft: 15 },
 });
