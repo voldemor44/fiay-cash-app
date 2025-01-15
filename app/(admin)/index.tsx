@@ -146,8 +146,7 @@ export default AdminDashboard;
 
 const styles = StyleSheet.create({
   donutContainer: { width: "auto", height: "auto", marginLeft: 15 },
-  buttonRow: { paddingTop: 40 },
-
+  buttonRow: { paddingTop: 45 },
   button: {
     flexDirection: "row",
     flex: 1,
