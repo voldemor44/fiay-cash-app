@@ -3,6 +3,7 @@ import React from "react";
 import { SharedValue, useDerivedValue } from "react-native-reanimated";
 import { Canvas, Path, Skia } from "@shopify/react-native-skia";
 import DonutPath from "./DonutPath";
+import { Row } from "../components";
 
 type Props = {
   n: number;
@@ -59,6 +60,20 @@ const DonutChart = ({
           );
         })}
       </Canvas>
+      <View style={styles.textView}>
+        <Row>
+          <Text className="font-pmedium text-green-600  text-1xl">
+            Taux de dépot :{" "}
+          </Text>
+          <Text className="font-pmedium text-green-600  text-1xl">34%</Text>
+        </Row>
+        <Row>
+          <Text className="font-pmedium text-gray-500  text-1xl">
+            Taux de d'envoi :{" "}
+          </Text>
+          <Text className="font-pmedium text-gray-500  text-1xl">66%</Text>
+        </Row>
+      </View>
     </View>
   );
 };
@@ -68,8 +83,10 @@ export default DonutChart;
 const styles = StyleSheet.create({
   containerView: {
     flex: 1,
+    flexDirection : "row",
     backgroundColor: "#f9f9f9",
     width: "auto",
+    height : 160,
     borderRadius: 8,
     justifyContent: "space-between",
     shadowColor: "#000",
@@ -77,13 +94,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 5,
-    margin: 8,
+    margin: 10,
     paddingLeft: 10,
-    paddingTop : 9
+    paddingTop: 9,
   },
   containerCanvas: {
     flex: 1,
     backgroundColor: "transparent",
     alignItems: "center",
   },
+  textView : {paddingRight : 15, paddingTop : 45}
 });

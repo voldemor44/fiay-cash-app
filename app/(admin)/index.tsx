@@ -145,7 +145,7 @@ const AdminDashboard = () => {
 export default AdminDashboard;
 
 const styles = StyleSheet.create({
-  donutContainer: { width: 325, height: 180, marginLeft: 15 },
+  donutContainer: { width: "auto", height: "auto", marginLeft: 15 },
   buttonRow: { paddingTop: 30 },
 
   button: {
