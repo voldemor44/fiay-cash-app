@@ -66,7 +66,7 @@ const AdminDashboard = () => {
       <Header title={"Dashboard"} />
 
       <ScrollView>
-        <View className="ml-5 mt-5">
+        <View className="ml-5 mt-10">
           <Text
             className="font-semibold text-gray-500 font-psemibold"
             style={{ fontSize: 18 }}
