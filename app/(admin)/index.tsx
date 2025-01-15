@@ -14,6 +14,7 @@ import { useSharedValue, withTiming } from "react-native-reanimated";
 import generateRandomNumbers from "../../utils/generateRandomNumbers";
 import caluculatePercentage from "../../utils/caluculatePercentage";
 import DonutChart from "../../mod/DonutChart";
+import { router } from "expo-router";
 
 type Props = {};
 
@@ -96,7 +97,7 @@ const AdminDashboard = () => {
             outerStrokeWidth={OUTER_STROKE_WIDTH}
             colors={colors}
           />
-          <View>
+          {/* <View>
             <Row>
               <Text className="font-pmedium text-green-600  text-1xl">
                 Taux de dépot :{" "}
@@ -109,7 +110,32 @@ const AdminDashboard = () => {
               </Text>
               <Text className="font-pmedium text-gray-500  text-1xl">66%</Text>
             </Row>
-          </View>
+          </View> */}
+        </Row>
+        <Row gap={12} className="justify-center" style={styles.buttonRow}>
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: "gray" }]}
+            className="justify-center text-gray-500 ml-4"
+            onPress={() => {
+              router.push("requests-table");
+            }}
+          >
+            <FontAwesome name="copy" size={16} color="#fff" />
+            <Text style={styles.buttonText}>Liste</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: "green" }]}
+            className="justify-center mr-4"
+            onPress={() => {
+              router.push("check-page");
+            }}
+          >
+            <FontAwesome name="copy" size={16} color="#fff" />
+            <Text className="font-pregular" style={styles.buttonText}>
+              Check
+            </Text>
+          </TouchableOpacity>
         </Row>
       </ScrollView>
     </SafeAreaView>
@@ -119,5 +145,21 @@ const AdminDashboard = () => {
 export default AdminDashboard;
 
 const styles = StyleSheet.create({
-  donutContainer: { width: 325, height: RADUIS * 3, marginLeft: 15 },
+  donutContainer: { width: 325, height: 180, marginLeft: 15 },
+  buttonRow: { paddingTop: 30 },
+
+  button: {
+    flexDirection: "row",
+    flex: 1,
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+  },
+
+  buttonText: {
+    color: "#fff",
+    fontSize: 14,
+    marginLeft: 8,
+  },
 });

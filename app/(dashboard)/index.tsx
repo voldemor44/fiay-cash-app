@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontSize: 14,
-    marginLeft: 8, // Espacement entre l'icône et le texte
+    marginLeft: 8,
   },
 });
 

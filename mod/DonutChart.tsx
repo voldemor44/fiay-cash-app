@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     elevation: 5,
     margin: 8,
     paddingLeft: 10,
+    paddingTop : 9
   },
   containerCanvas: {
     flex: 1,
