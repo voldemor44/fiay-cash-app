@@ -1,12 +1,69 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
-const HistoryRow = () => {
+type Props = {
+  history: { type: string; content: string; create_at: string };
+};
+
+const HistoryContent = ({ history }: Props) => {
+  const { type, content, create_at } = history;
+  return (
+    <View style={styles.singleItem}>
+      <View style={styles.row}>
+        <View style={styles.tweetContentContainer}>
+          <View style={styles.rowTop}>
+            <Text numberOfLines={1} style={[styles.header]}>
+              {type}
+            </Text>
+
+            <Text className="text-gray-500">·</Text>
+            <Text className="text-gray-500">2h</Text>
+          </View>
+          <Text style={[styles.description]}>{content}</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const HistoryRow = ({ history_data }) => {
   return (
     <View>
-      <Text>HistoryRow</Text>
+      <HistoryContent history={history_data} />
     </View>
   );
 };
 
 export default HistoryRow;
+
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 14,
+    fontWeight: "bold",
+    paddingBottom: 4,
+    paddingRight: 4,
+    color: "#000",
+  },
+  description: {
+    fontSize: 14,
+    color: "#000",
+  },
+  singleItem: {
+    paddingHorizontal: 16,
+    minHeight: 44,
+    flex: 1,
+    padding: 16,
+  },
+  rowTop: {
+    flexDirection: "row",
+  },
+
+  row: {
+    flexDirection: "row",
+  },
+
+  tweetContentContainer: {
+    flexShrink: 1,
+    flexGrow: 1,
+  },
+});
