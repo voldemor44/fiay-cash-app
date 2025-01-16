@@ -2,11 +2,11 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
 type Props = {
-  history: { type: string; content: string; create_at: string };
+  history: { type: string; content: string; created_at: string };
 };
 
 const HistoryContent = ({ history }: Props) => {
-  const { type, content, create_at } = history;
+  const { type, content, created_at } = history;
   return (
     <View style={styles.singleItem}>
       <View style={styles.row}>
