@@ -12,14 +12,18 @@ const HistoryContent = ({ history }: Props) => {
       <View style={styles.row}>
         <View style={styles.tweetContentContainer}>
           <View style={styles.rowTop}>
-            <Text numberOfLines={1} style={[styles.header]}>
+            <Text
+              className="font-psemibold"
+              numberOfLines={1}
+              style={[styles.header]}
+            >
               {type}
             </Text>
 
-            <Text className="text-gray-500">·</Text>
-            <Text className="text-gray-500">2h</Text>
+            <Text className="text-gray-500 font-psemibold">·</Text>
+            <Text className="text-gray-500 font-psemibold">2h</Text>
           </View>
-          <Text style={[styles.description]}>{content}</Text>
+          <Text  className="font-pregular" style={[styles.description]}>{content}</Text>
         </View>
       </View>
     </View>
@@ -39,7 +43,6 @@ export default HistoryRow;
 const styles = StyleSheet.create({
   header: {
     fontSize: 14,
-    fontWeight: "bold",
     paddingBottom: 4,
     paddingRight: 4,
     color: "#000",
