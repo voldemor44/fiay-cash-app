@@ -62,11 +62,11 @@ const AdminDashboard = () => {
     generateData();
   }, []);
   return (
-    <SafeAreaView>
+    <SafeAreaView className="h-full">
       <Header title={"Dashboard"} />
 
       <ScrollView>
-        <View className="ml-5 mt-10">
+        <View className="ml-5 mt-5">
           <Text
             className="font-semibold text-gray-500 font-psemibold"
             style={{ fontSize: 18 }}
@@ -81,6 +81,10 @@ const AdminDashboard = () => {
           <Row className="justify-center">
             <Card text="Solde" icon="sack-dollar" value="10000" />
             <Card text="Transferts" icon="money-bill-transfer" value="3000" />
+          </Row>
+          <Row className="justify-center">
+            <Card text="Partners" icon="users" value="100" />
+            <Card text="Requêtes" icon="wpforms" value="25" />
           </Row>
         </View>
         <Row
@@ -112,7 +116,7 @@ const AdminDashboard = () => {
             </Row>
           </View> */}
         </Row>
-        <Row gap={12} className="justify-center" style={styles.buttonRow}>
+        <Row gap={12} className="justify-center mb-5" style={styles.buttonRow}>
           <TouchableOpacity
             style={[styles.button, { backgroundColor: "gray" }]}
             className="justify-center text-gray-500 ml-4"

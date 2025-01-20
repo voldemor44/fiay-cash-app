@@ -5,6 +5,7 @@ import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
+import React from "react";
 
 const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false);
