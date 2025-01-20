@@ -84,7 +84,7 @@ const AdminDashboard = () => {
           </Row>
           <Row className="justify-center">
             <Card text="Partners" icon="users" value="100" />
-            <Card text="Requêtes" icon="wpforms" value="25" />
+            <Card text="Requêtes" icon="wpforms" value="25/40" />
           </Row>
         </View>
         <Row

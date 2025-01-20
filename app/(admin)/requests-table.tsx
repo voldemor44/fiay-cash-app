@@ -111,6 +111,8 @@ const RequestsTable = () => {
             />
           </DataTable>
         </View>
+
+        <View></View>
       </SafeAreaView>
     </PaperProvider>
   );
