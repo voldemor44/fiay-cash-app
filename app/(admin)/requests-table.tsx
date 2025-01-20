@@ -118,32 +118,34 @@ const RequestsTable = () => {
               />
             </DataTable>
           </View>
-          <View className="ml-5">
-            <Text className="font-pbold text-green-600">1xBet</Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes validées :{" "}
-            </Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes rejetées :{" "}
-            </Text>
-          </View>
-          <View className="ml-5">
-            <Text className="font-pbold text-green-600">WinBet</Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes validées :{" "}
-            </Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes rejetées :{" "}
-            </Text>
-          </View>
-          <View className="ml-5">
-            <Text className="font-pbold text-green-600">MelBet</Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes validées :{" "}
-            </Text>
-            <Text className="font-psemibold text-gray-500">
-              Nombre de requêtes rejetées :{" "}
-            </Text>
+          <View style={styles.container}>
+            <View style={styles.view}>
+              <Text className="font-pbold text-green-600">1xBet</Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes validées :{" "}
+              </Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes rejetées :{" "}
+              </Text>
+            </View>
+            <View style={styles.view}>
+              <Text className="font-pbold text-green-600">WinBet</Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes validées :{" "}
+              </Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes rejetées :{" "}
+              </Text>
+            </View>
+            <View style={styles.view}>
+              <Text className="font-pbold text-green-600">MelBet</Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes validées :{" "}
+              </Text>
+              <Text className="font-psemibold text-gray-500">
+                Nombre de requêtes rejetées :{" "}
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -152,8 +154,24 @@ const RequestsTable = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    marginTop: 20,
+  },
+  view: {
+    width: "100%",
+    backgroundColor: "#f0f0f0",
+    padding: 20,
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    elevation: 3,
+    marginBottom : 20
+  },
   buttonRow: { paddingTop: 30 },
-
   button: {
     paddingVertical: 10,
     paddingHorizontal: 10,
