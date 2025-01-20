@@ -58,6 +58,8 @@ const RequestsTable = () => {
     },
   ]);
 
+  const [showStats, setShowStats] = useState(false);
+
   const from = page * itemsPerPage;
   const to = Math.min((page + 1) * itemsPerPage, items.length);
 
@@ -118,35 +120,54 @@ const RequestsTable = () => {
               />
             </DataTable>
           </View>
-          <View style={styles.container}>
-            <View style={styles.view}>
-              <Text className="font-pbold text-green-600">1xBet</Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes validées :{" "}
-              </Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes rejetées :{" "}
-              </Text>
+          <>
+            <Row className="justify-end pt-5">
+              <TouchableOpacity
+                style={styles.button}
+                className="justify-center mr-4 bg-gray-500"
+                onPress={() => {
+                  setShowStats(!showStats);
+                }}
+              >
+                <Text className="font-pregular" style={{ color: "#fff" }}>
+                  {showStats
+                    ? "Masquer les statistiques"
+                    : "Afficher les statistiques"}
+                </Text>
+              </TouchableOpacity>
+            </Row>
+          </>
+          {showStats ? (
+            <View style={styles.container}>
+              <View style={styles.view}>
+                <Text className="font-pbold text-green-600">1xBet</Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes validées :{" "}
+                </Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes rejetées :{" "}
+                </Text>
+              </View>
+              <View style={styles.view}>
+                <Text className="font-pbold text-green-600">WinBet</Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes validées :{" "}
+                </Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes rejetées :{" "}
+                </Text>
+              </View>
+              <View style={styles.view}>
+                <Text className="font-pbold text-green-600">MelBet</Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes validées :{" "}
+                </Text>
+                <Text className="font-psemibold text-gray-500">
+                  Nombre de requêtes rejetées :{" "}
+                </Text>
+              </View>
             </View>
-            <View style={styles.view}>
-              <Text className="font-pbold text-green-600">WinBet</Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes validées :{" "}
-              </Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes rejetées :{" "}
-              </Text>
-            </View>
-            <View style={styles.view}>
-              <Text className="font-pbold text-green-600">MelBet</Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes validées :{" "}
-              </Text>
-              <Text className="font-psemibold text-gray-500">
-                Nombre de requêtes rejetées :{" "}
-              </Text>
-            </View>
-          </View>
+          ) : null}
         </ScrollView>
       </SafeAreaView>
     </PaperProvider>
@@ -169,7 +190,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 3,
-    marginBottom : 20
+    marginBottom: 20,
   },
   buttonRow: { paddingTop: 30 },
   button: {
