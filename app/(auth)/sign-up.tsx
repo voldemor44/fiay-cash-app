@@ -21,9 +21,13 @@ const SignUp = () => {
 
   const submit = async () => {
     axiosClient
-      .post("")
-      .then(({ data }) => {})
-      .catch((error) => {});
+      .post("/users", form)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
