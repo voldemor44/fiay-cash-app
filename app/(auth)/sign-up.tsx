@@ -6,6 +6,7 @@ import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import React from "react";
+import axiosClient from "../../axios-client";
 
 const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false);
@@ -18,7 +19,12 @@ const SignUp = () => {
     password: "",
   });
 
-  const submit = async () => {};
+  const submit = async () => {
+    axiosClient
+      .post("")
+      .then(({ data }) => {})
+      .catch((error) => {});
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
