@@ -5,7 +5,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Image } from "react-native";
 import { images } from "../../constants";
 import { FormField, CustomButton } from "../../components";
-import axiosClient from "../../axios-client";
 
 const SignIn = () => {
   const [form, setForm] = useState({

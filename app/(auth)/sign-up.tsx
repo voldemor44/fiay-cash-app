@@ -6,31 +6,31 @@ import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import React from "react";
-import axiosClient from "../../axios-client";
 
 const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
-    first_name: "",
-    last_name: "",
-    username: "",
-    phone: "",
     email: "",
+    firstname: "",
+    lastname: "",
+    pseudo: "",
+    phone: "",
     password: "",
+    password_confirmation :""
   });
 
   const submit = async () => {
     setSubmitting(true);
-    axiosClient
-      .post("/users", form)
-      .then(({ data }) => {
-        console.log(data);
-        setSubmitting(false);
-        router.push("(dashboard)");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axiosClient
+    //   .post("/users", form)
+    //   .then(({ data }) => {
+    //     console.log(data);
+    //     setSubmitting(false);
+    //     router.push("(dashboard)");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
   return (
@@ -54,20 +54,20 @@ const SignUp = () => {
 
           <FormField
             title="Nom"
-            value={form.last_name}
-            handleChangeText={(e) => setForm({ ...form, last_name: e })}
+            value={form.lastname}
+            handleChangeText={(e) => setForm({ ...form, lastname: e })}
             otherStyles="mt-4"
           />
           <FormField
             title="Prénoms"
-            value={form.first_name}
-            handleChangeText={(e) => setForm({ ...form, first_name: e })}
+            value={form.firstname}
+            handleChangeText={(e) => setForm({ ...form, firstname: e })}
             otherStyles="mt-10"
           />
           <FormField
             title="Pseudo"
-            value={form.username}
-            handleChangeText={(e) => setForm({ ...form, username: e })}
+            value={form.pseudo}
+            handleChangeText={(e) => setForm({ ...form, pseudo: e })}
             otherStyles="mt-10"
           />
           <FormField

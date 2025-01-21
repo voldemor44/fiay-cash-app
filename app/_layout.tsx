@@ -3,7 +3,6 @@ import React from "react";
 import { SplashScreen, Stack } from "expo-router";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
-import { ContextProvider } from "../contexts/ContextProvider";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,14 +26,12 @@ const RootLayout = () => {
 
   if (!fontsLoaded && !error) return null;
   return (
-    <ContextProvider>
       <Stack>
         <Stack.Screen name="(dashboard)" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="(admin)" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
       </Stack>
-    </ContextProvider>
   );
 };
 

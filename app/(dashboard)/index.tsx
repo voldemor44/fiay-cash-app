@@ -5,10 +5,8 @@ import { Row, Card } from "../../components";
 import { FontAwesome } from "@expo/vector-icons";
 import Header from "../../mod/Header";
 import { router } from "expo-router";
-import { useStateContext } from "../../contexts/ContextProvider";
 
 const Dashboard = () => {
-  const { user, token, setUser, setToken } = useStateContext();
   return (
     <SafeAreaView style={styles.container}>
       <Header title={"Dashboard"} />
