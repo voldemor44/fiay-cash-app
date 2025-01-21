@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 
@@ -20,10 +20,13 @@ const SignUp = () => {
   });
 
   const submit = async () => {
+    setSubmitting(true);
     axiosClient
       .post("/users", form)
       .then(({ data }) => {
         console.log(data);
+        setSubmitting(false);
+        router.push("(dashboard)");
       })
       .catch((error) => {
         console.log(error);
