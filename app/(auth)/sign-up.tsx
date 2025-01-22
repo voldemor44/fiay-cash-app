@@ -7,6 +7,7 @@ import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import React from "react";
 import axiosClient from "../../axios-client";
+import { areAllValuesNonEmpty } from "../../utils/simpleFunctions";
 
 const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false);
@@ -17,21 +18,24 @@ const SignUp = () => {
     pseudo: "",
     phone: "",
     password: "",
-    password_confirmation :""
+    password_confirmation: "",
   });
 
   const submit = async () => {
-    setSubmitting(true);
-    axiosClient
-      .post("/users", form)
-      .then(({ data }) => {
-        console.log(data);
-        setSubmitting(false);
-        router.push("(dashboard)");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (areAllValuesNonEmpty(form)) {
+      setSubmitting(true);
+      axiosClient
+        .post("/users", form)
+        .then(({ data }) => {
+          console.log(data);
+          setSubmitting(false);
+          router.push("(dashboard)");
+        })
+        .catch((error) => {
+          console.log(error);
+          setSubmitting(false);
+        });
+    }
   };
 
   return (
@@ -90,6 +94,15 @@ const SignUp = () => {
             title="Password"
             value={form.password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
+            otherStyles="mt-7"
+          />
+
+          <FormField
+            title="Password Confirmation"
+            value={form.password_confirmation}
+            handleChangeText={(e) =>
+              setForm({ ...form, password_confirmation: e })
+            }
             otherStyles="mt-7"
           />
 
