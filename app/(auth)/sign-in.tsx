@@ -6,8 +6,11 @@ import { View, Text, ScrollView, Image } from "react-native";
 import { images } from "../../constants";
 import { FormField, CustomButton } from "../../components";
 import axiosClient from "../../axios-client";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const SignIn = () => {
+  const { setUser, setToken } = useStateContext();
+
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -15,7 +18,19 @@ const SignIn = () => {
   const [isSubmitting, setSubmitting] = useState(false);
 
   const submit = async () => {
-    router.push("(admin)");
+    axiosClient
+      .post("/login", form)
+      .then(({ data }) => {
+        console.log(data);
+
+        setToken(data.data.access_token);
+        router.push("(admin)");
+        setSubmitting(false);
+      })
+      .catch((error) => {
+        console.log(error, "attempt");
+        setSubmitting(false);
+      });
   };
 
   return (

@@ -8,8 +8,10 @@ import { CustomButton, FormField } from "../../components";
 import React from "react";
 import axiosClient from "../../axios-client";
 import { areAllValuesNonEmpty } from "../../utils/simpleFunctions";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 const SignUp = () => {
+  const { setUser, setToken } = useStateContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
@@ -28,6 +30,7 @@ const SignUp = () => {
         .post("/users", form)
         .then(({ data }) => {
           console.log(data);
+          setUser(data.data)
           setSubmitting(false);
           router.push("(dashboard)");
         })

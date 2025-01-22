@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Row, Card } from "../../components";
 import { FontAwesome } from "@expo/vector-icons";
@@ -8,7 +8,13 @@ import { router } from "expo-router";
 import { useStateContext } from "../../contexts/ContextProvider";
 
 const Dashboard = () => {
-  const { user, token, setUser, setToken } = useStateContext();
+  const { token } = useStateContext();
+
+  useEffect(() => {
+    if (token) {
+      
+    }
+  }, [token]);
   return (
     <SafeAreaView style={styles.container}>
       <Header title={"Dashboard"} />
