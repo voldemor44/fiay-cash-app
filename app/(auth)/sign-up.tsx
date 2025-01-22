@@ -6,6 +6,7 @@ import { View, Text, ScrollView, Dimensions, Image } from "react-native";
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
 import React from "react";
+import axiosClient from "../../axios-client";
 
 const SignUp = () => {
   const [isSubmitting, setSubmitting] = useState(false);
@@ -21,16 +22,16 @@ const SignUp = () => {
 
   const submit = async () => {
     setSubmitting(true);
-    // axiosClient
-    //   .post("/users", form)
-    //   .then(({ data }) => {
-    //     console.log(data);
-    //     setSubmitting(false);
-    //     router.push("(dashboard)");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axiosClient
+      .post("/users", form)
+      .then(({ data }) => {
+        console.log(data);
+        setSubmitting(false);
+        router.push("(dashboard)");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
