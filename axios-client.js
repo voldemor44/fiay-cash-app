@@ -25,6 +25,8 @@ axiosClient.interceptors.response.use(
   (error) => {
     try {
       const { response } = error;
+      console.log(BACKEND_URL);
+      
       if (response.status === 401) {
         AsyncStorage.removeItem("ACCESS_TOKEN");
       }
