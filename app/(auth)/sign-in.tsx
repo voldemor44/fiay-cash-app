@@ -21,10 +21,11 @@ const SignIn = () => {
     axiosClient
       .post("/login", form)
       .then(({ data }) => {
-        console.log(data);
+        console.log(data.data.access_token);
 
         setToken(data.data.access_token);
         router.push("(admin)");
+
         setSubmitting(false);
       })
       .catch((error) => {
